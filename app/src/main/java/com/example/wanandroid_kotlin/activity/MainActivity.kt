@@ -37,15 +37,19 @@ class MainActivity : AppCompatActivity(),HomeFragment.OnFragmentInteractionListe
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
+                tabFun(0)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {
+                tabFun(1)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
+                tabFun(2)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_personal->{
+                tabFun(3)
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -72,12 +76,11 @@ class MainActivity : AppCompatActivity(),HomeFragment.OnFragmentInteractionListe
     private fun tabFun(index:Int) {
         var transaction = supportFragmentManager.beginTransaction()
         when(index){
-            0->transaction.add(R.id.home_container,fragmentsList[0])
-            1->transaction.add(R.id.home_container,fragmentsList[1])
-            2->transaction.add(R.id.home_container,fragmentsList[2])
-            3->transaction.add(R.id.home_container,fragmentsList[3])
+            0->transaction.replace(R.id.home_container,fragmentsList[0])
+            1->transaction.replace(R.id.home_container,fragmentsList[1])
+            2->transaction.replace(R.id.home_container,fragmentsList[2])
+            3->transaction.replace(R.id.home_container,fragmentsList[3])
         }
-
         transaction.commit()
     }
 }
