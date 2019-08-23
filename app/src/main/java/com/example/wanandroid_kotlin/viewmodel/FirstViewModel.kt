@@ -2,6 +2,9 @@ package com.example.wanandroid_kotlin.viewmodel
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
+import android.content.Intent
+import android.view.View
+import com.example.wanandroid_kotlin.activity.TestActivity
 
 class FirstViewModel : ViewModel() {
     var number:MutableLiveData<Int> = MutableLiveData()
@@ -19,7 +22,11 @@ class FirstViewModel : ViewModel() {
         number.value = number.value?.plus(1)
     }
 
-    fun switch(){
-        checkName.value = !checkName.value!!
+    fun toNext(view:View){
+        val context = view.context
+        val intent = Intent(context, TestActivity::class.java)
+        context.startActivity(intent)
+
     }
+
 }
