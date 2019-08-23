@@ -1,11 +1,13 @@
 package com.example.wanandroid_kotlin.fragment
 
+import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
 import android.databinding.DataBindingUtil
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -50,10 +52,13 @@ class HomeFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         //监听数据变化
-//        firstViewModel.number.observe(this, Observer {
-//            Log.e("+++",""+firstViewModel.number.value)
-//        })
+        firstViewModel.checkName.observe(this, Observer {
+            Log.e("+++",""+firstViewModel.checkName.value)
+        })
 
+        firstViewModel.inputText.observe(this, Observer {
+            Log.e("+++","inputText:"+firstViewModel.inputText.value)
+        })
     }
 
     fun onButtonPressed(uri: Uri) {
