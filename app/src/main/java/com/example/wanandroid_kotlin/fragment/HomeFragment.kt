@@ -1,34 +1,29 @@
 package com.example.wanandroid_kotlin.fragment
 
+import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
+import android.databinding.DataBindingUtil
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import com.example.wanandroid_kotlin.R
+import com.example.wanandroid_kotlin.databinding.FragmentHomeBinding
+import com.example.wanandroid_kotlin.viewmodel.FirstViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Activities that contain this fragment must implement the
- * [HomeFragment.OnFragmentInteractionListener] interface
- * to handle interaction events.
- * Use the [HomeFragment.newInstance] factory method to
- * create an instance of this fragment.
- *
- */
 class HomeFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
+    private var banners:List<String> = listOf()
+    private lateinit var firstViewModel: FirstViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,17 +31,32 @@ class HomeFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        val dataBind: FragmentHomeBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_home,container,false)
+        firstViewModel = ViewModelProviders.of(this)[FirstViewModel::class.java]
+        firstViewModel.number.value = 3
+
+        dataBind.viewModel = firstViewModel
+        dataBind.setLifecycleOwner { lifecycle }
+        return dataBind.root
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        //监听数据变化
+//        firstViewModel.number.observe(this, Observer {
+//            Log.e("+++",""+firstViewModel.number.value)
+//        })
+
+    }
+
     fun onButtonPressed(uri: Uri) {
         listener?.onHomeFragmentInteraction(uri)
     }
