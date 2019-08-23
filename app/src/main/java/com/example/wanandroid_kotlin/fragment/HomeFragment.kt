@@ -40,7 +40,6 @@ class HomeFragment : Fragment() {
     ): View? {
         val dataBind: FragmentHomeBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_home,container,false)
         firstViewModel = ViewModelProviders.of(this)[FirstViewModel::class.java]
-        firstViewModel.number.value = 3
 
         dataBind.viewModel = firstViewModel
         dataBind.setLifecycleOwner { lifecycle }

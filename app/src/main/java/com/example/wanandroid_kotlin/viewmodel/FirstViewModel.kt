@@ -6,6 +6,10 @@ import android.arch.lifecycle.ViewModel
 class FirstViewModel : ViewModel() {
     var number:MutableLiveData<Int> = MutableLiveData()
 
+    init {
+        number.value = 0
+    }
+
 
     fun add(){
         number.value = number.value?.plus(1)
