@@ -46,6 +46,9 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
     implementation "org.jetbrains.anko:anko:$anko_version"
     implementation 'com.squareup.retrofit2:retrofit:2.6.1'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.6.0'
     implementation "io.reactivex.rxjava3:rxjava:3.0.0-RC2"
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     implementation 'android.arch.lifecycle:extensions:1.1.1'

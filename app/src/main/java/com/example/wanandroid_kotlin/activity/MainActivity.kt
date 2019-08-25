@@ -1,5 +1,6 @@
 package com.example.wanandroid_kotlin.activity
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
@@ -49,7 +50,8 @@ class MainActivity : AppCompatActivity(),HomeFragment.OnFragmentInteractionListe
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_personal->{
-                tabFun(3)
+//                tabFun(3)
+                startActivity(Intent(this,LoginOrRegisterActivity::class.java))
                 return@OnNavigationItemSelectedListener true
             }
         }

@@ -13,6 +13,7 @@ class FirstViewModel : ViewModel() {
 
     init {
         number.value = 0
+        number.postValue(1)
         inputText.value = "please input name"
         checkName.value = true
     }
