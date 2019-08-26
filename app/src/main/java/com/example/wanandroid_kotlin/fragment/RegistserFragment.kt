@@ -1,13 +1,13 @@
 package com.example.wanandroid_kotlin.fragment
 
 
-import android.arch.lifecycle.ViewModelProviders
-import android.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 
 import com.example.wanandroid_kotlin.R
 import com.example.wanandroid_kotlin.databinding.FragmentRegistserBinding

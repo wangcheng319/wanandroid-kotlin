@@ -3,15 +3,14 @@ package com.example.wanandroid_kotlin.activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.example.wanandroid_kotlin.R
 import com.example.wanandroid_kotlin.fragment.CollectFragment
 import com.example.wanandroid_kotlin.fragment.HomeFragment
 import com.example.wanandroid_kotlin.fragment.PersonalFragment
 import com.example.wanandroid_kotlin.fragment.ProjectFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity(),HomeFragment.OnFragmentInteractionListener,ProjectFragment.OnFragmentInteractionListener,
     CollectFragment.OnFragmentInteractionListener,PersonalFragment.OnFragmentInteractionListener{

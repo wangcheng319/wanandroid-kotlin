@@ -1,13 +1,15 @@
 package com.example.wanandroid_kotlin.viewmodel
 
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
 import android.util.Log
+import android.view.View
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.navigation.Navigation
 import com.example.wanandroid_kotlin.http.*
 
-class RegisterViewModel:ViewModel() {
+class RegisterViewModel: ViewModel() {
 
-     var userName:MutableLiveData<String> = MutableLiveData()
+     var userName: MutableLiveData<String> = MutableLiveData()
      var passWord:MutableLiveData<String> = MutableLiveData()
      var repassWord:MutableLiveData<String> = MutableLiveData()
      var result:MutableLiveData<String> = MutableLiveData()
@@ -44,6 +46,10 @@ class RegisterViewModel:ViewModel() {
                     Log.e("+++", "失败$statusCode")
                 }
             })
+    }
+
+    fun toLogin(view:View){
+        Navigation.findNavController(view).navigateUp()
     }
 
 

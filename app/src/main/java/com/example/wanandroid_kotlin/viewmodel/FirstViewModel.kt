@@ -1,13 +1,13 @@
 package com.example.wanandroid_kotlin.viewmodel
 
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
 import android.content.Intent
 import android.view.View
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.example.wanandroid_kotlin.activity.TestActivity
 
 class FirstViewModel : ViewModel() {
-    var number:MutableLiveData<Int> = MutableLiveData()
+    var number: MutableLiveData<Int> = MutableLiveData()
     var checkName:MutableLiveData<Boolean> = MutableLiveData()
     var inputText:MutableLiveData<String> = MutableLiveData()
 

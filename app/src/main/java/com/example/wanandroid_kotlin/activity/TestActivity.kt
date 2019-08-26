@@ -1,7 +1,7 @@
 package com.example.wanandroid_kotlin.activity
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.wanandroid_kotlin.R
 
 class TestActivity : AppCompatActivity() {

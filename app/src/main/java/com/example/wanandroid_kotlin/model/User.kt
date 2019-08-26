@@ -1,6 +1,6 @@
 package com.example.wanandroid_kotlin.model
 
-import android.databinding.*
+import androidx.databinding.*
 
 /**
  *
