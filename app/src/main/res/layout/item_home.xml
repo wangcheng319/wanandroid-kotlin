@@ -21,11 +21,15 @@
             android:layout_height="wrap_content"
             android:text="@{item.chapterName}"/>
 
-        <com.example.wanandroid_kotlin.utils.MyImageView
-            android:id="@+id/iv"
+<!--        <com.example.wanandroid_kotlin.utils.MyImageView-->
+<!--            android:id="@+id/iv"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:setImageUrl="@{item.envelopePic}"/>-->
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:setImageUrl="@{item.envelopePic}"/>
+            app:imageUrl="@{item.envelopePic}"/>
 
     </LinearLayout>
 </layout>
