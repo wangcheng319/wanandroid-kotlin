@@ -4,16 +4,19 @@ import android.content.Context
 import androidx.databinding.DataBindingUtil
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.Observable
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wanandroid_kotlin.R
+import com.example.wanandroid_kotlin.adapter.TestAdapter
 import com.example.wanandroid_kotlin.databinding.FragmentHomeBinding
-import com.example.wanandroid_kotlin.viewmodel.FirstViewModel
+import com.example.wanandroid_kotlin.viewmodel.HomeViewModel
+import kotlinx.android.synthetic.main.fragment_home.*
 
 
 private const val ARG_PARAM1 = "param1"
@@ -25,7 +28,7 @@ class HomeFragment : Fragment() {
     private var param2: String? = null
     private var listener: OnFragmentInteractionListener? = null
     private var banners:List<String> = listOf()
-    private lateinit var firstViewModel: FirstViewModel
+    private lateinit var homeViewModel: HomeViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,23 +44,19 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val dataBind: FragmentHomeBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_home,container,false)
-        firstViewModel = ViewModelProviders.of(this)[FirstViewModel::class.java]
+        homeViewModel = ViewModelProviders.of(this)[HomeViewModel::class.java]
 
-        dataBind.viewModel = firstViewModel
+        dataBind.viewModel = homeViewModel
         dataBind.setLifecycleOwner { lifecycle }
         return dataBind.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-        //监听数据变化
-        firstViewModel.checkName.observe(this, Observer {
-            Log.e("+++",""+firstViewModel.checkName.value)
-        })
-
-        firstViewModel.inputText.observe(this, Observer {
-            Log.e("+++","inputText:"+firstViewModel.inputText.value)
+        homeViewModel.getArticleList()
+        homeViewModel.datas.observe(this, Observer {
+            rv.layoutManager = LinearLayoutManager(activity)
+            rv.adapter = activity?.let { TestAdapter(it, homeViewModel.datas.value!!) }
         })
     }
 
