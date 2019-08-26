@@ -17,8 +17,12 @@ class ExampleUnitTest {
 
     @Test
     fun addition_isCorrect() {
-     print(b.length)
-        print(c?.length)
+        var resutl = b.let {
+            print(it.length)
+            100
+        }
+
+        print(resutl)
     }
 
 

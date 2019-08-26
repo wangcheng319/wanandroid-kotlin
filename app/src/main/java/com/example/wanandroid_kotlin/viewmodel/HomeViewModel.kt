@@ -37,6 +37,9 @@ class HomeViewModel : ViewModel() {
             .subscribe(object :ApiResponse<Article>(){
                 override fun success(data: BaseDto<Article>) {
                     Log.e("+++","success:"+data.data)
+                    for (item in data.data?.datas!!){
+                        item.envelopePic = "https://user-gold-cdn.xitu.io/2019/5/28/16afeb62060ea77d?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"
+                    }
                     datas.value =  data.data?.datas
                 }
 

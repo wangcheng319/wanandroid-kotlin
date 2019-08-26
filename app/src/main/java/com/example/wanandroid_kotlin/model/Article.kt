@@ -33,7 +33,7 @@ class Article {
          val collect: Boolean = false
          val courseId: Int = 0
          val desc: String? = null
-         val envelopePic: String? = null
+         var envelopePic: String? = null
          val fresh: Boolean = false
          val id: Int = 0
          val link: String? = null

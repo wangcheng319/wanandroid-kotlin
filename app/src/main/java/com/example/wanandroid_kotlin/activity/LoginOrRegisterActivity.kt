@@ -2,6 +2,7 @@ package com.example.wanandroid_kotlin.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import com.example.wanandroid_kotlin.R
 import com.example.wanandroid_kotlin.fragment.RegistserFragment

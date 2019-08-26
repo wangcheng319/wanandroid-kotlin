@@ -2,9 +2,11 @@ package com.example.wanandroid_kotlin.viewmodel
 
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
+import com.example.wanandroid_kotlin.App
 import com.example.wanandroid_kotlin.http.*
 
 class RegisterViewModel: ViewModel() {
@@ -27,11 +29,13 @@ class RegisterViewModel: ViewModel() {
         Log.e("+++","方法调用")
         if (userName.value?.isEmpty()!!){
             Log.e("+++","用户名不能为空")
+            Toast.makeText(App.context,"用户名不能为空",Toast.LENGTH_SHORT).show()
             return
         }
 
         if (isCheck.value!=true){
             Log.e("+++","请勾选协议")
+            Toast.makeText(App.context,"请勾选协议",Toast.LENGTH_SHORT).show()
             return
         }
 
