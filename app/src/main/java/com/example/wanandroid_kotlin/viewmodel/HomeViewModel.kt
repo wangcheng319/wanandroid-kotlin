@@ -12,8 +12,12 @@ import com.example.wanandroid_kotlin.http.ApiResponse
 import com.example.wanandroid_kotlin.http.BaseDto
 import com.example.wanandroid_kotlin.http.NetworkScheduler
 import com.example.wanandroid_kotlin.model.Article
+import com.example.wanandroid_kotlin.model.repository.HomeRepository
+import io.reactivex.Observable
+import io.reactivex.Single
+import io.reactivex.functions.Consumer
 
-class HomeViewModel : ViewModel() {
+class HomeViewModel() : ViewModel() {
     var number: MutableLiveData<Int> = MutableLiveData()
     var checkName:MutableLiveData<Boolean> = MutableLiveData()
     var inputText:MutableLiveData<String> = MutableLiveData()
@@ -34,7 +38,7 @@ class HomeViewModel : ViewModel() {
 
     fun getArticleList(){
         ApiClient.instance.init().getArticleList("0").compose(NetworkScheduler.compose())
-            .subscribe(object :ApiResponse<Article>(){
+            .subscribe(object : ApiResponse<Article>(){
                 override fun success(data: BaseDto<Article>) {
                     Log.e("+++","success:"+data.data)
                     for (item in data.data?.datas!!){

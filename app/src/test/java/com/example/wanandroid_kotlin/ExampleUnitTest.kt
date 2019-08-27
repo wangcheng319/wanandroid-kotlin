@@ -1,9 +1,15 @@
 package com.example.wanandroid_kotlin
 
 import com.example.wanandroid_kotlin.model.User
+import io.reactivex.Observable
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.functions.Consumer
+import io.reactivex.functions.Function
+import io.reactivex.schedulers.Schedulers
 import org.junit.Test
 
 import org.junit.Assert.*
+import java.util.concurrent.TimeUnit
 import kotlin.contracts.ReturnsNotNull
 
 /**
@@ -17,12 +23,8 @@ class ExampleUnitTest {
 
     @Test
     fun addition_isCorrect() {
-        var resutl = b.let {
-            print(it.length)
-            100
-        }
-
-        print(resutl)
+        Observable.interval(5, TimeUnit.SECONDS, Schedulers.io())
+            .subscribe { tick -> print(tick) }
     }
 
 
