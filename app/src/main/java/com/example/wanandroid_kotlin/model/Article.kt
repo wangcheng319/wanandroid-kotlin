@@ -2,6 +2,7 @@ package com.example.wanandroid_kotlin.model
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
+import androidx.lifecycle.MutableLiveData
 import com.bumptech.glide.Glide
 import java.util.*
 
@@ -49,7 +50,7 @@ class Article {
          val type: Int = 0
          val userId: Int = 0
          val visible: Int = 0
-         val zan: Int = 0
+         var zan: Int = 0
     }
 
     class Tags{

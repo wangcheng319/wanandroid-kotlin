@@ -4,14 +4,12 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.wanandroid_kotlin.databinding.ItemHomeBinding
-import com.example.wanandroid_kotlin.model.Article
-import android.widget.ImageView
-import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.wanandroid_kotlin.R
+import com.example.wanandroid_kotlin.databinding.ItemHomeBinding
+import com.example.wanandroid_kotlin.model.Article
+import kotlinx.android.synthetic.main.item_home.view.*
 
 
 class TestAdapter(private val mContext: Context, private val datas: List<Article.Datas>) :
@@ -25,6 +23,18 @@ class TestAdapter(private val mContext: Context, private val datas: List<Article
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         datas[position]?.let { ViewHolder.bind(holder, it) }
+        holder.itemView.btn_add.setOnClickListener { add(position) }
+        holder.itemView.btn_reduce.setOnClickListener { reduce(position) }
+    }
+
+    private fun reduce(position: Int) {
+        datas[position].zan--
+        notifyItemChanged(position)
+    }
+
+    private fun add(position: Int) {
+        datas[position].zan++
+        notifyItemChanged(position)
     }
 
     override fun getItemCount(): Int {
@@ -38,7 +48,11 @@ class TestAdapter(private val mContext: Context, private val datas: List<Article
                 viewHolder.dataBinding?.item = item
             }
         }
+
+
     }
+
+
 
 
 
