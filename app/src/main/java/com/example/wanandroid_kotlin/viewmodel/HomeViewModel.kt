@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.wanandroid_kotlin.App
 import com.example.wanandroid_kotlin.activity.TestActivity
 import com.example.wanandroid_kotlin.http.ApiClient
 import com.example.wanandroid_kotlin.http.ApiResponse
@@ -26,10 +27,9 @@ class HomeViewModel : ViewModel() {
     }
 
 
-    fun toNext(view:View){
-        val context = view.context
-        val intent = Intent(context, TestActivity::class.java)
-        context.startActivity(intent)
+    fun toNext(){
+        val intent = Intent(App.context, TestActivity::class.java)
+        App.context.startActivity(intent)
     }
 
     fun getArticleList(){
