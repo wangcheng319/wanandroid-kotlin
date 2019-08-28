@@ -1,16 +1,10 @@
 package com.example.wanandroid_kotlin
 
-import com.example.wanandroid_kotlin.model.User
 import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.functions.Consumer
-import io.reactivex.functions.Function
 import io.reactivex.schedulers.Schedulers
 import org.junit.Test
 
-import org.junit.Assert.*
 import java.util.concurrent.TimeUnit
-import kotlin.contracts.ReturnsNotNull
 
 /**
  * Example local unit test, which will execute on the development machine (host).

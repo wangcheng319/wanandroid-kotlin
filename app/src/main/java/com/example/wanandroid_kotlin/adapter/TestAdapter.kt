@@ -7,8 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wanandroid_kotlin.R
-import com.example.wanandroid_kotlin.databinding.ItemHomeBinding
-import com.example.wanandroid_kotlin.model.Article
+import com.example.wanandroid_kotlin.mvvm.model.Article
 import kotlinx.android.synthetic.main.item_home.view.*
 
 
@@ -42,7 +41,7 @@ class TestAdapter(private val mContext: Context, private val datas: List<Article
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-         var dataBinding: ItemHomeBinding? = DataBindingUtil.bind(itemView)
+         var dataBinding: com.example.wanandroid_kotlin.databinding.ItemHomeBinding? = DataBindingUtil.bind(itemView)
         companion object {
             fun bind(viewHolder: ViewHolder, item: Article.Datas){
                 viewHolder.dataBinding?.item = item

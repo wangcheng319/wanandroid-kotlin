@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wanandroid_kotlin.R
 import com.example.wanandroid_kotlin.adapter.TestAdapter
 import com.example.wanandroid_kotlin.databinding.FragmentHomeBinding
-import com.example.wanandroid_kotlin.viewmodel.HomeViewModel
+import com.example.wanandroid_kotlin.mvvm.viewmodel.HomeViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
 
 

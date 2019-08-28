@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.wanandroid_kotlin.viewmodel.HomeViewModel" />
+            type="com.example.wanandroid_kotlin.mvvm.viewmodel.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

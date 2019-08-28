@@ -1,6 +1,6 @@
 package com.example.wanandroid_kotlin.http
 
-import com.example.wanandroid_kotlin.model.Article
+import com.example.wanandroid_kotlin.mvvm.model.Article
 import io.reactivex.Observable
 import retrofit2.http.*
 

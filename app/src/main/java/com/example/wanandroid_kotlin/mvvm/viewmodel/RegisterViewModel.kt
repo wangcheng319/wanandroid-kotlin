@@ -1,4 +1,4 @@
-package com.example.wanandroid_kotlin.viewmodel
+package com.example.wanandroid_kotlin.mvvm.viewmodel
 
 import android.util.Log
 import android.view.View

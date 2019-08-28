@@ -1,4 +1,4 @@
-package com.example.wanandroid_kotlin.model
+package com.example.wanandroid_kotlin.mvvm.model
 
 import androidx.databinding.*
 

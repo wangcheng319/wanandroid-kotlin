@@ -1,15 +1,10 @@
-package com.example.wanandroid_kotlin.viewmodel
+package com.example.wanandroid_kotlin.mvvm.viewmodel
 
 import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import com.example.wanandroid_kotlin.R
-import io.reactivex.Observable
-import io.reactivex.disposables.Disposable
-import io.reactivex.schedulers.Schedulers
-import io.reactivex.subjects.PublishSubject
-import java.util.concurrent.TimeUnit
 
 class LoginViewModel : ViewModel() {
     // TODO: Implement the ViewModel

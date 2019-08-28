@@ -6,7 +6,7 @@
     <data>
         <variable
             name="view_model"
-            type="com.example.wanandroid_kotlin.viewmodel.RegisterViewModel" />
+            type="com.example.wanandroid_kotlin.mvvm.viewmodel.RegisterViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -1,4 +1,4 @@
-package com.example.wanandroid_kotlin.model.repository
+package com.example.wanandroid_kotlin.mvvm.repository
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
@@ -6,7 +6,7 @@ import com.example.wanandroid_kotlin.http.ApiClient
 import com.example.wanandroid_kotlin.http.ApiResponse
 import com.example.wanandroid_kotlin.http.BaseDto
 import com.example.wanandroid_kotlin.http.NetworkScheduler
-import com.example.wanandroid_kotlin.model.Article
+import com.example.wanandroid_kotlin.mvvm.model.Article
 
 /**
  *

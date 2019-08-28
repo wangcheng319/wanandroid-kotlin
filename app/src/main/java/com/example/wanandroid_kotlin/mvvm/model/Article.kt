@@ -1,10 +1,4 @@
-package com.example.wanandroid_kotlin.model
-
-import android.widget.ImageView
-import androidx.databinding.BindingAdapter
-import androidx.lifecycle.MutableLiveData
-import com.bumptech.glide.Glide
-import java.util.*
+package com.example.wanandroid_kotlin.mvvm.model
 
 /**
  *

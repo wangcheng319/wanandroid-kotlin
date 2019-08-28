@@ -1,8 +1,7 @@
-package com.example.wanandroid_kotlin.viewmodel
+package com.example.wanandroid_kotlin.mvvm.viewmodel
 
 import android.content.Intent
 import android.util.Log
-import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.wanandroid_kotlin.App
@@ -11,13 +10,9 @@ import com.example.wanandroid_kotlin.http.ApiClient
 import com.example.wanandroid_kotlin.http.ApiResponse
 import com.example.wanandroid_kotlin.http.BaseDto
 import com.example.wanandroid_kotlin.http.NetworkScheduler
-import com.example.wanandroid_kotlin.model.Article
-import com.example.wanandroid_kotlin.model.repository.HomeRepository
-import io.reactivex.Observable
-import io.reactivex.Single
-import io.reactivex.functions.Consumer
+import com.example.wanandroid_kotlin.mvvm.model.Article
 
-class HomeViewModel() : ViewModel() {
+class HomeViewModel : ViewModel() {
     var number: MutableLiveData<Int> = MutableLiveData()
     var checkName:MutableLiveData<Boolean> = MutableLiveData()
     var inputText:MutableLiveData<String> = MutableLiveData()

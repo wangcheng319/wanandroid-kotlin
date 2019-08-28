@@ -9,9 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 
 import com.example.wanandroid_kotlin.R
-import com.example.wanandroid_kotlin.databinding.FragmentHomeBinding
 import com.example.wanandroid_kotlin.databinding.LoginFragmentBinding
-import com.example.wanandroid_kotlin.viewmodel.LoginViewModel
+import com.example.wanandroid_kotlin.mvvm.viewmodel.LoginViewModel
 
 class LoginFragment : Fragment() {
 

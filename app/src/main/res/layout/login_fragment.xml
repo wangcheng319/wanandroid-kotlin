@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.wanandroid_kotlin.viewmodel.LoginViewModel"/>
+            type="com.example.wanandroid_kotlin.mvvm.viewmodel.LoginViewModel"/>
 
         <variable
             name="activity"
